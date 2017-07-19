@@ -58,7 +58,7 @@ if (!is_null($events['events'])) {
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/push';
 			$data = [
-				'to' => '1165ddffef854c75b22aa7315b1a559c',
+				'to' => '1524955341',
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);
