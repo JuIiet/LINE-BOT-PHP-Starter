@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-		}else{
+		}else if ($event['type'] == 'message' && $event['message']['type'] == 'sticker'){
 		
 			$arr = array("U0fa1e57bb597256e92751fe5b8449c18","Ubbbf15ca12440b7dce60d34135901a5e","Uf24d1d8fc96b7db32e551b4b38632a7f");
 			// Get text sent
