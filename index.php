@@ -44,13 +44,13 @@ if (!is_null($events['events'])) {
 		}else{
 		
 			// Get text sent
-			$text = $event['message']['text'];
+			//$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
 			$messages = [
-				'type' => 'text',
+				'type' => 'image',
 				'originalContentUrl' => 'https://github.com/apple-touch-icon.png',
 				'previewImageUrl' => 'https://github.com/apple-touch-icon.png'
 			];
