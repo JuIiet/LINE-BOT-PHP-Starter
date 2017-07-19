@@ -91,13 +91,16 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
+			$actions = ['type' => 'message',
+				    'label' => 'Open',
+				    'uri' => 'http://www.efintradeplus.com/'
+				   ];
+			
 			$messages = [
 				'type' => 'template',
-				'text' => 'Are you sure?',
-				'actions' => ['type' => 'message',
-					      'label' => 'Open',
-					      'uri' => 'http://www.efintradeplus.com/'
-					     ]
+				'altText' => 'Test',
+				'template' => TemplateType::BUTTONS,
+				'actions' => [$actions]
 				
 			];
 
