@@ -42,13 +42,16 @@ if (!is_null($events['events'])) {
 
 			echo $result . "\r\n";
 		}
-		else{
+		else if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
+			// Get text sent
+			$text = $event['message']['text'];
+			// Get replyToken
 			$replyToken = $event['replyToken'];
+
 			// Build message to reply back
 			$messages = [
-				'type' => 'image',
-				'originalContentUrl' => 'https://github.com/apple-touch-icon.png'
-				'previewImageUrl' => 'https://github.com/apple-touch-icon.png'
+				'type' => 'text',
+				'text' => 'https://github.com/apple-touch-icon.png'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -57,7 +60,6 @@ if (!is_null($events['events'])) {
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
 			];
-			
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
