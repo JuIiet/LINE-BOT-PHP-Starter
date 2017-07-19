@@ -93,13 +93,12 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'template',
-				'template' => ['type' => 'confirm',
-					       'text' => 'Are you sure?',
-					       'actions' => ['type' => 'message',
-							     'label' => 'Yes',
-							     'text' => 'Yes'
-							     ]
-				]
+				'text' => 'Are you sure?',
+				'actions' => ['type' => 'message',
+					      'label' => 'Open',
+					      'uri' => 'http://www.efintradeplus.com/'
+					     ]
+				
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
