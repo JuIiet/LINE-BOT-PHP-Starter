@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-		}else if ($event['type'] == 'message' && $event['message']['type'] == 'sticker'){
+		}else if ($event['type'] == 'message' && $event['message']['type'] == 'image'){
 		
 			$arr = array("U0fa1e57bb597256e92751fe5b8449c18","Ubbbf15ca12440b7dce60d34135901a5e","Uf24d1d8fc96b7db32e551b4b38632a7f");
 			// Get text sent
@@ -81,7 +81,7 @@ if (!is_null($events['events'])) {
 			}
 			
 			
-		}else if($event['type'] == 'message' && $event['message']['type'] == 'image'){
+		}else if($event['type'] == 'message' && $event['message']['type'] == 'sticker'){
 			//Get UserID
 			$userId = $event['source']['userId'];
 			
@@ -97,10 +97,9 @@ if (!is_null($events['events'])) {
 				   ];
 			
 			$messages = [
-				'type' => 'template',
-				'altText' => 'Test',
-				'template' => TemplateType::BUTTONS,
-				'actions' => [$actions],
+				'type' => 'sticker',
+				'packageId' => '1',
+				'stickerId' => '1',
 				
 			];
 
