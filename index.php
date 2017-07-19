@@ -100,7 +100,7 @@ if (!is_null($events['events'])) {
 				'type' => 'template',
 				'altText' => 'Test',
 				'template' => TemplateType::BUTTONS,
-				'actions' => [$actions]
+				'actions' => [$actions],
 				
 			];
 
@@ -125,5 +125,5 @@ if (!is_null($events['events'])) {
 
 	}
 }
-echo "OK2";
+echo "OK1";
 ?>
