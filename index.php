@@ -96,7 +96,16 @@ if (!is_null($events['events'])) {
 				    'uri' => 'http://www.efintradeplus.com/'
 				   ];
 			
-			$messages = [ 'type' => 'template', 'altText' => 'this is a confirm template', 'template' => [ 'type' => 'confirm', 'text' => 'Are you sure?', 'actions': [ [ 'type' => 'message', 'label' => 'Yes', 'text' => "yes" ], [ 'type' => 'message', 'label' => 'No', 'text' => 'no' ] ] ] 
+			$messages = [ 'type' => 'template',
+				     'altText' => 'this is a confirm template',
+				     'template' => [ 'type' => 'confirm',
+						    'text' => 'Are you sure?',
+						    'actions'=> [ [ 'type' => 'message',
+								   'label' => 'Yes',
+								   'text' => "yes" ],
+								 [ 'type' => 'message',
+								  'label' => 'No',
+								  'text' => 'no' ] ] ] 
 				    ];
 
 			// Make a POST Request to Messaging API to reply to sender
