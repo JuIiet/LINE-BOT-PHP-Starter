@@ -47,6 +47,7 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}else{
 		
+			$arr = array("U0fa1e57bb597256e92751fe5b8449c18","Ubbbf15ca12440b7dce60d34135901a5e");
 			// Get text sent
 			//$text = $event['message']['text'];
 			// Get replyToken
@@ -61,8 +62,9 @@ if (!is_null($events['events'])) {
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/push';
-			$data = [
-				'to' => 'Ubbbf15ca12440b7dce60d34135901a5e',
+			foreach ($arr as $value) {
+				$data = [
+				'to' => $value,
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);
@@ -76,6 +78,9 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
+			}
+			
+			
 		}
 
 	}
