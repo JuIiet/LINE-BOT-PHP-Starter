@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages],
+				'messages' => [$messages]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -99,7 +99,7 @@ if (!is_null($events['events'])) {
 			$messages = [ 'type' => 'template',
 				     'altText' => 'this is a confirm template',
 				     'template' => [ 'type' => 'confirm',
-						    'text' => 'Are you sure?',
+						    'text' => 'คุณคือผู้เริ่มต้น?',
 						    'actions'=> [ [ 'type' => 'message',
 								   'label' => 'Yes',
 								   'text' => "yes" ],
@@ -129,5 +129,5 @@ if (!is_null($events['events'])) {
 
 	}
 }
-echo "OK1";
+echo "OK2";
 ?>
