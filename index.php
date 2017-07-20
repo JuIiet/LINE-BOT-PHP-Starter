@@ -47,11 +47,6 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			//echo $result . "\r\n";
-			
-			$strFileName = "newfile.txt";
-			$objFopen = fopen($strFileName, 'w');
-			$strText1 = "I Love ThaiCreate.Com Line1\r\n";
-			fwrite($objFopen, $testvalue);
 
 		}else if ($event['type'] == 'message' && $event['message']['type'] == 'image'){
 		
